@@ -16,9 +16,9 @@ pipeline{
                 sh "mv target/*.war target/myweb.war"
             } 
         }
-         stage('SonarQube Analysis') {
-           withSonarQubeEnv('sonar-6') 
+         stage('SonarQube Analysis') { 
               steps { 
+                withSonarQubeEnv('sonar-6')
                 sh "/opt/bin/mvn sonar:sonar"
         }
      }
