@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'Github', url: 'https://github.com/Mallannasugur/My-app-with-sonar'
+                git credentialsId: 'Github', url: 'https://github.com/Mallannasugur/myweb'
             }
         }
         stage("Maven Build"){
