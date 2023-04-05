@@ -14,7 +14,13 @@ pipeline{
             steps{
                 sh "mvn clean package -Dmaven.test.skip=true"
                 sh "mv target/*.war target/myweb.war"
-        } 
-     }
+            } 
+        }
+           stage('SonarQube Analysis') {
+           def mvnHome =  tool name: 'maven3', type: 'maven'
+           withSonarQubeEnv('sonar-6') { 
+           sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
+    }
  }
 }
