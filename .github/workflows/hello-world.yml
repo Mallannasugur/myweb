@@ -1,0 +1,15 @@
+name: Hello world example
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: run hello world script
+        run: echo "Hello, world!"
+        
